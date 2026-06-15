@@ -14,23 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
+            menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
-            
-            // Toggle hamburger icon animation
-            const icon = menuToggle.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.className = 'fa-solid fa-xmark';
-            } else {
-                icon.className = 'fa-solid fa-bars-staggered';
-            }
         });
 
         // Close menu when clicking outside of it
         document.addEventListener('click', (e) => {
             if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.className = 'fa-solid fa-bars-staggered';
             }
         });
 
@@ -38,9 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.className = 'fa-solid fa-bars-staggered';
             });
         });
     }
