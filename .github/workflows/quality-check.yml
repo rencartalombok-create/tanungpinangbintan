@@ -1,0 +1,91 @@
+name: ✅ Validasi & Quality Check
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  # Manual trigger
+  workflow_dispatch:
+
+jobs:
+  # ──────────────────────────────────────
+  # Job 1: Validasi HTML
+  # ──────────────────────────────────────
+  validate-html:
+    name: 🔍 Validasi HTML (W3C)
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Validasi HTML dengan html5validator
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: ./
+          css: true
+          blacklist: assets/
+
+  # ──────────────────────────────────────
+  # Job 2: Cek ukuran asset (performance)
+  # ──────────────────────────────────────
+  check-assets:
+    name: 📊 Cek Performa Asset
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📊 Laporan ukuran file
+        run: |
+          echo "============================================="
+          echo "  📁 Laporan Ukuran File - Tanjung Pinang RC"
+          echo "============================================="
+          echo ""
+          echo "📄 File Utama:"
+          wc -c index.html | awk '{printf "  index.html  : %s bytes (%.2f KB)\n", $1, $1/1024}'
+          wc -c style.css  | awk '{printf "  style.css   : %s bytes (%.2f KB)\n", $1, $1/1024}'
+          wc -c script.js  | awk '{printf "  script.js   : %s bytes (%.2f KB)\n", $1, $1/1024}'
+          echo ""
+          echo "🖼️ Assets:"
+          for f in assets/*; do
+            size=$(wc -c < "$f")
+            kb=$(echo "scale=2; $size/1024" | bc)
+            printf "  %-30s %6s KB\n" "$(basename $f)" "$kb"
+            # Warning jika gambar > 500KB
+            if [ $size -gt 512000 ]; then
+              echo "  ⚠️  WARNING: $(basename $f) lebih dari 500KB — pertimbangkan kompresi!"
+            fi
+          done
+          echo ""
+          echo "📦 Total assets:"
+          du -sh assets/ | awk '{print "  " $1}'
+          echo "============================================="
+
+  # ──────────────────────────────────────
+  # Job 3: Cek broken links
+  # ──────────────────────────────────────
+  check-links:
+    name: 🔗 Cek Link Rusak
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔗 Scan broken links dengan lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --base https://tanjungpinangrentcar.com
+            --exclude-all-private
+            --exclude "^https://wa.me"
+            --exclude "^https://api.whatsapp.com"
+            --exclude "^localhost"
+            --timeout 30
+            --verbose
+            ./index.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
