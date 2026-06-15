@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Format WhatsApp Message
             const waNumber = '6282285807402'; // Replace with company phone number
-            const message = `Halo CV Strada Transportasi & Travel, saya ingin menanyakan ketersediaan mobil:
+            const message = `Halo Zelina Transport, saya ingin menanyakan ketersediaan mobil:
 - *Jenis Mobil*: ${carType}
 - *Lokasi Jemput*: ${location}
 - *Tanggal Jemput*: ${pickupDate}
