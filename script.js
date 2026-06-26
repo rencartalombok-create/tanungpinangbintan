@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const carType = document.getElementById('carType').value;
             
             // Format WhatsApp Message
-            const waNumber = '6282285807402'; // Replace with company phone number
+            const waNumber = '6285763760841'; // Replace with company phone number
             const message = `Halo Zelina Transport, saya ingin menanyakan ketersediaan mobil:
 - *Jenis Mobil*: ${carType}
 - *Lokasi Jemput*: ${location}
