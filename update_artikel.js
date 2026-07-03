@@ -82,10 +82,6 @@ const updateHtmlFile = (filePath) => {
     }
 };
 
-if (generatedCards.length > 0) {
-    updateHtmlFile(indexFile);
-    updateHtmlFile(artikelFile);
-    console.log(`\nBerhasil menambahkan ${generatedCards.length} artikel ke halaman depan.`);
-} else {
-    console.log('Tidak ada artikel baru yang perlu ditambahkan.');
-}
+updateHtmlFile(indexFile);
+updateHtmlFile(artikelFile);
+console.log(`\nBerhasil memproses ${generatedCards.length} artikel otomatis.`);
