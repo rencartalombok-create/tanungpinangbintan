@@ -5,12 +5,15 @@ echo ==========================================================
 echo       PUSH REVISI KE GITHUB ^& SINKRONISASI FOLDER
 echo ==========================================================
 echo.
-echo 1. Menyinkronkan file ke folder produksi (tanjungpinang)...
+echo 1. Update otomatis artikel SEO...
+node update_artikel.js
+echo.
+echo 2. Menyinkronkan file ke folder produksi (tanjungpinang)...
 xcopy "d:\proj\rentcartanjung\index.html" "d:\proj\tanjungpinang\" /y /d
 xcopy "d:\proj\rentcartanjung\style.css" "d:\proj\tanjungpinang\" /y /d
 xcopy "d:\proj\rentcartanjung\artikel.html" "d:\proj\tanjungpinang\" /y /d
 echo.
-echo 2. Menyiapkan Git Commit...
+echo 3. Menyiapkan Git Commit...
 set /p commit_msg="Masukkan pesan revisi (Tekan Enter untuk default: 'Revisi Tampilan Armada'): "
 if "%commit_msg%"=="" set commit_msg=Revisi Tampilan Armada
 echo.
