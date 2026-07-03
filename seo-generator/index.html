@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SEO Article Generator - Tanjungpinang.com</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>SEO Gen <span class="badge">PRO</span></h2>
+                <button id="theme-toggle" class="btn-icon" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-link active" data-target="dashboard">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="#generate" class="nav-link" data-target="generate">
+                    <i class="fas fa-magic"></i> Generate Artikel
+                </a>
+                <a href="#articles" class="nav-link" data-target="articles">
+                    <i class="fas fa-list-alt"></i> Daftar Artikel
+                </a>
+                <a href="#keywords" class="nav-link" data-target="keywords">
+                    <i class="fas fa-key"></i> Keyword Manager
+                </a>
+                <a href="#sitemap" class="nav-link" data-target="sitemap">
+                    <i class="fas fa-sitemap"></i> Sitemap Generator
+                </a>
+                <a href="#settings" class="nav-link" data-target="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>v1.0.0 - Tanjungpinang.com</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-menu-toggle btn-icon">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="User">
+                        <span>Admin SEO</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Sections -->
+            <div class="sections-container">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section active">
+                    <div class="grid-cards">
+                        <div class="card stat-card blue">
+                            <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="stat-details">
+                                <h3>Total Artikel</h3>
+                                <p id="stat-total-articles">0</p>
+                            </div>
+                        </div>
+                        <div class="card stat-card green">
+                            <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="stat-details">
+                                <h3>Terpublikasi</h3>
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <div class="card stat-card yellow">
+                            <div class="stat-icon"><i class="fas fa-key"></i></div>
+                            <div class="stat-details">
+                                <h3>Keywords Aktif</h3>
+                                <p>15</p>
+                            </div>
+                        </div>
+                        <div class="card stat-card purple">
+                            <div class="stat-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="stat-details">
+                                <h3>Avg SEO Score</h3>
+                                <p>98/100</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <h2>Aktivitas Terakhir</h2>
+                        <div class="empty-state">
+                            <i class="fas fa-chart-area"></i>
+                            <p>Belum ada aktivitas. Mulai generate artikel baru.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Generate Artikel Section -->
+                <section id="generate" class="content-section">
+                    <div class="card">
+                        <h2>Konfigurasi Artikel SEO</h2>
+                        <form id="generate-form" class="generate-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="keyword">Keyword Utama</label>
+                                    <input type="text" id="keyword" required placeholder="Contoh: sewa mobil bintan">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kota">Target Kota</label>
+                                    <input type="text" id="kota" value="Tanjungpinang & Bintan">
+                                </div>
+                                <div class="form-group">
+                                    <label for="panjang">Panjang Artikel (Kata)</label>
+                                    <select id="panjang">
+                                        <option value="1000">1000 Kata (Standar)</option>
+                                        <option value="1500" selected>1500 Kata (SEO Optimal)</option>
+                                        <option value="2000">2000 Kata (Pilar Konten)</option>
+                                        <option value="3000">3000 Kata (Ultimate Guide)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bahasa">Bahasa</label>
+                                    <select id="bahasa">
+                                        <option value="id-ID">Indonesia</option>
+                                        <option value="en-US">English</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nada">Nada Penulisan</label>
+                                    <select id="nada">
+                                        <option value="profesional">Profesional & Informatif</option>
+                                        <option value="persuasif" selected>Persuasif & Marketing</option>
+                                        <option value="santai">Santai & Bersahabat</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nama_web">Nama Website</label>
+                                    <input type="text" id="nama_web" value="Tanjungpinang.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="whatsapp">Nomor WhatsApp</label>
+                                    <input type="text" id="whatsapp" value="6281234567890">
+                                </div>
+                                <div class="form-group">
+                                    <label for="alamat">Alamat Bisnis (Local SEO)</label>
+                                    <input type="text" id="alamat" value="Jl. RH Fisabilillah, Tanjungpinang, Kepulauan Riau">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="cta">Call to Action (CTA)</label>
+                                    <textarea id="cta" rows="2">Hubungi kami sekarang untuk mendapatkan penawaran spesial sewa mobil terbaik di Bintan dan Tanjungpinang!</textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="btn-generate">
+                                    <i class="fas fa-magic"></i> Generate Artikel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Loader -->
+                    <div id="loader" class="loader-container hidden">
+                        <div class="spinner"></div>
+                        <h3>AI sedang merangkai kata...</h3>
+                        <p>Mengoptimalkan SEO, Schema Markup, dan Density Keyword.</p>
+                        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+                    </div>
+
+                    <!-- Result Section -->
+                    <div id="result-section" class="card mt-4 hidden">
+                        <div class="result-header">
+                            <h2>Hasil Generate</h2>
+                            <div class="seo-scores">
+                                <span class="badge green" title="SEO Score"><i class="fas fa-check"></i> SEO: 98/100</span>
+                                <span class="badge blue" title="Readability"><i class="fas fa-book-reader"></i> Readability: A</span>
+                                <span class="badge purple" id="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="preview">Preview HTML</button>
+                            <button class="tab-btn" data-tab="code">Source Code</button>
+                            <button class="tab-btn" data-tab="seo">SEO Data</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="tab-preview">
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <div class="url-bar" id="preview-url">tanjungpinang.com/blog/...</div>
+                                </div>
+                                <div class="browser-content" id="preview-container">
+                                    <!-- Preview goes here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="tab-code">
+                            <div class="code-header">
+                                <span><i class="fas fa-file-code"></i> index.html</span>
+                                <button class="btn-small" id="btn-copy-code"><i class="far fa-copy"></i> Copy</button>
+                            </div>
+                            <pre><code id="code-container"></code></pre>
+                        </div>
+                        
+                        <div class="tab-content" id="tab-seo">
+                            <div class="seo-data-grid" id="seo-data-container">
+                                <!-- SEO Data goes here -->
+                            </div>
+                        </div>
+                        
+                        <div class="result-actions">
+                            <button class="btn btn-secondary" id="btn-download-html"><i class="fas fa-download"></i> Download HTML</button>
+                            <button class="btn btn-secondary" id="btn-download-zip"><i class="fas fa-file-archive"></i> Download ZIP</button>
+                            <button class="btn btn-secondary" id="btn-export-md"><i class="fab fa-markdown"></i> Export MD</button>
+                            <button class="btn btn-secondary" id="btn-export-json"><i class="fas fa-code"></i> JSON</button>
+                            <button class="btn btn-success" id="btn-publish"><i class="fas fa-paper-plane"></i> Simpan & Publish</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Daftar Artikel Section -->
+                <section id="articles" class="content-section">
+                    <div class="card">
+                        <div class="card-header-flex">
+                            <h2>Daftar Artikel Tersimpan</h2>
+                            <button class="btn btn-primary btn-small" onclick="document.querySelector('[data-target=\'generate\']').click()"><i class="fas fa-plus"></i> Buat Baru</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Keyword</th>
+                                        <th>Slug URL</th>
+                                        <th>Tanggal</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="article-list">
+                                    <!-- Articles will be listed here -->
+                                    <tr class="empty-row"><td colspan="5">Belum ada artikel yang digenerate.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Placeholder Sections -->
+                <section id="keywords" class="content-section">
+                    <div class="card">
+                        <h2>Keyword Manager</h2>
+                        <p>Fitur untuk melacak densitas dan ide keyword turunan (LSI).</p>
+                        <!-- Stub -->
+                    </div>
+                </section>
+                <section id="sitemap" class="content-section">
+                    <div class="card">
+                        <h2>Sitemap & Robots.txt Generator</h2>
+                        <p>Generate sitemap.xml otomatis dari daftar artikel yang telah dibuat.</p>
+                        <button class="btn btn-primary mt-2" id="btn-generate-sitemap"><i class="fas fa-sitemap"></i> Buat Sitemap</button>
+                    </div>
+                </section>
+                <section id="settings" class="content-section">
+                    <div class="card">
+                        <h2>Pengaturan Global</h2>
+                        <p>Konfigurasi default untuk website dan integrasi API (jika ada).</p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- JSZip for ZIP Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@ echo.
 echo 1. Menyinkronkan file ke folder produksi (tanjungpinang)...
 xcopy "d:\proj\rentcartanjung\index.html" "d:\proj\tanjungpinang\" /y /d
 xcopy "d:\proj\rentcartanjung\style.css" "d:\proj\tanjungpinang\" /y /d
+xcopy "d:\proj\rentcartanjung\artikel.html" "d:\proj\tanjungpinang\" /y /d
 echo.
 echo 2. Menyiapkan Git Commit...
 set /p commit_msg="Masukkan pesan revisi (Tekan Enter untuk default: 'Revisi Tampilan Armada'): "
