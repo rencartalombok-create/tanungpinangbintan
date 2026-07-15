@@ -29,21 +29,16 @@ if (fs.existsSync(blogDir)) {
         const words = textContent.trim().split(/\s+/).length;
         const readTime = Math.ceil(words / 200) || 3;
         
-        // We can pick a random Unsplash image based on the file name length to make it deterministic but varied
-        const images = [
-            'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80',
-            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
-            'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80',
-            'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=600&q=80'
-        ];
-        const imgIndex = file.length % images.length;
+        // Extract image from meta tags
+        const imgMatch = content.match(/<meta\s+property="og:image"\s+content="(.*?)"/i);
+        const imageUrl = imgMatch ? imgMatch[1] : 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80';
         
         const cardHtml = `
                 <!-- Auto-Generated Card: ${file} -->
                 <div class="blog-card animate-on-scroll">
                     <div class="blog-image-container">
                         <span class="blog-category">INFORMASI TERBARU</span>
-                        <img src="${images[imgIndex]}" alt="${title}" class="blog-image" loading="lazy">
+                        <img src="${imageUrl}" alt="${title}" class="blog-image" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <h3 class="blog-title">${title}</h3>
