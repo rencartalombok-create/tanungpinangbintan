@@ -17,16 +17,10 @@ xcopy "d:\proj\rentcartanjung\assets\*" "d:\proj\tanjungpinang\assets\" /y /e /i
 xcopy "d:\proj\rentcartanjung\blog\*" "d:\proj\tanjungpinang\blog\" /y /e /i /d
 echo.
 echo 3. Menyiapkan Git Commit...
-set /p commit_msg="Masukkan pesan revisi (Tekan Enter untuk default: 'Revisi Tampilan Armada'): "
-if "%commit_msg%"=="" set commit_msg=Revisi Tampilan Armada
-echo.
-echo 3. Menambahkan perubahan ke git...
 git add .
+git commit -m "Revisi Tampilan Armada"
 echo.
-echo 4. Melakukan commit dengan pesan: "%commit_msg%"...
-git commit -m "%commit_msg%"
-echo.
-echo 5. Mengirim perubahan ke GitHub...
+echo 4. Mengirim perubahan ke GitHub...
 git push origin main
 echo.
 echo ==========================================================
