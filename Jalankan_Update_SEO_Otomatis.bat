@@ -1,5 +1,5 @@
 @echo off
-title Update SEO & Artikel Otomatis - Zelina Transport
+title Update SEO dan Artikel Otomatis - Zelina Transport
 color 0a
 
 echo ==========================================================
