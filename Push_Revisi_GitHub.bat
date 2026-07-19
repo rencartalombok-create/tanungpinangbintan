@@ -6,7 +6,7 @@ echo       PUSH REVISI KE GITHUB ^& SINKRONISASI FOLDER
 echo ==========================================================
 echo.
 echo 1. Generate & Update Otomatis Artikel SEO...
-node auto_generate_seo.js
+node seo_automation.js
 echo.
 echo 2. Menyinkronkan file ke folder produksi (tanjungpinang)...
 xcopy "d:\proj\rentcartanjung\index.html" "d:\proj\tanjungpinang\" /y /d
