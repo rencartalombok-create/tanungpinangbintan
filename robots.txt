@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /seo-tools/
+Disallow: /private/
+
+Sitemap: https://tanjungpinangrentcar.com/sitemap.xml
