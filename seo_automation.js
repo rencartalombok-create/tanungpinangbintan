@@ -151,7 +151,7 @@ const targetArticles = [
         isTanjungPinang: true,
         focus: "innova",
         priority: "medium"
-    }
+    },
     {
         keyword: "Sewa Mobil Bintan Murah",
         slug: "sewa-mobil-bintan-murah",
