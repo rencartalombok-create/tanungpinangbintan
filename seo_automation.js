@@ -152,6 +152,25 @@ const targetArticles = [
         focus: "innova",
         priority: "medium"
     }
+    {
+        keyword: "Sewa Mobil Bintan Murah",
+        slug: "sewa-mobil-bintan-murah",
+        category: "PROMO & LAYANAN",
+        location: "Bintan",
+        isBintan: true,
+        focus: "murah",
+        priority: "medium"
+    },
+    {
+        keyword: "Sewa Mobil Avanza Bintan",
+        slug: "sewa-mobil-avanza-bintan",
+        category: "REKOMENDASI",
+        location: "Bintan",
+        isBintan: true,
+        focus: "avanza",
+        priority: "medium"
+    }
+
 ];
 
 // Helper to capitalize words
@@ -453,7 +472,7 @@ const generateUniqueArticle = (item, internalLinks, index) => {
     const kw = item.keyword;
     const loc = item.location;
     const slug = item.slug;
-    
+
     // Select dynamic intro based on focus or rotate if not available
     let introText = "";
     const introList = intros[item.focus] || intros["umum"];
@@ -502,10 +521,10 @@ const generateUniqueArticle = (item, internalLinks, index) => {
         "description": metaDesc,
         "image": imageUrl,
         "author": { "@type": "Organization", "name": "Zelina Transport" },
-        "publisher": { 
-            "@type": "Organization", 
-            "name": "Zelina Transport", 
-            "logo": { "@type": "ImageObject", "url": "https://tanjungpinangrentcar.com/assets/logo.png" } 
+        "publisher": {
+            "@type": "Organization",
+            "name": "Zelina Transport",
+            "logo": { "@type": "ImageObject", "url": "https://tanjungpinangrentcar.com/assets/logo.png" }
         },
         "datePublished": dateNow,
         "dateModified": dateNow
@@ -538,13 +557,13 @@ const generateUniqueArticle = (item, internalLinks, index) => {
         "image": "https://tanjungpinangrentcar.com/assets/logo.png",
         "telephone": "+6285763760841",
         "priceRange": "Rp250000 - Rp1800000",
-        "address": { 
-            "@type": "PostalAddress", 
-            "streetAddress": "Batu 8 atas JL. Raja Haji Fisabilillah", 
-            "addressLocality": "Tanjung Pinang", 
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Batu 8 atas JL. Raja Haji Fisabilillah",
+            "addressLocality": "Tanjung Pinang",
             "addressRegion": "Kepulauan Riau",
             "postalCode": "29125",
-            "addressCountry": "ID" 
+            "addressCountry": "ID"
         }
     };
 
@@ -898,10 +917,10 @@ targetArticles.forEach((item, index) => {
     const otherArticles = targetArticles.filter(a => a.slug !== item.slug);
     // Shuffle/slice to get 4 links
     const internalLinks = otherArticles.slice(0, 4);
-    
+
     const htmlContent = generateUniqueArticle(item, internalLinks, index);
     const filePath = path.join(blogDir, `${item.slug}.html`);
-    
+
     fs.writeFileSync(filePath, htmlContent, 'utf-8');
     console.log(`   ✅ blog/${item.slug}.html [SEO Score: 98+]`);
 });
@@ -916,19 +935,19 @@ const files = fs.readdirSync(blogDir).filter(file => file.endsWith('.html') && !
 files.forEach(file => {
     const filePath = path.join(blogDir, file);
     const content = fs.readFileSync(filePath, 'utf-8');
-    
+
     // Extract title
     const titleMatch = content.match(/<title>(.*?)<\/title>/i);
     const title = titleMatch ? titleMatch[1].split('|')[0].trim() : 'Artikel SEO';
-    
+
     // Extract description
     const descMatch = content.match(/<meta\s+name="description"\s+content="(.*?)"/i);
     const desc = descMatch ? descMatch[1] : 'Baca artikel lengkap kami mengenai ' + title;
-    
+
     // Extract image from meta tags
     const imgMatch = content.match(/<meta\s+property="og:image"\s+content="(.*?)"/i);
     const imageUrl = imgMatch ? imgMatch[1] : 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80';
-    
+
     // Count words for read time
     const textContent = content.replace(/<[^>]*>?/gm, ' ');
     const words = textContent.trim().split(/\s+/).length;
@@ -950,7 +969,7 @@ files.forEach(file => {
                         </div>
                     </div>
                 </div>`;
-    
+
     generatedCards.push(cardHtml);
 });
 
@@ -960,19 +979,19 @@ const updateHtmlMarkers = (filePath) => {
         console.log(`   ⚠️ File tidak ditemukan: ${path.basename(filePath)}`);
         return;
     }
-    
+
     let content = fs.readFileSync(filePath, 'utf-8');
     const startMarker = '<!-- AUTO-GENERATED-START -->';
     const endMarker = '<!-- AUTO-GENERATED-END -->';
-    
+
     const startIndex = content.indexOf(startMarker);
     const endIndex = content.indexOf(endMarker);
-    
+
     if (startIndex !== -1 && endIndex !== -1) {
-        const newContent = content.substring(0, startIndex + startMarker.length) + 
-                           '\n' + generatedCards.join('\n') + '\n                ' + 
-                           content.substring(endIndex);
-                           
+        const newContent = content.substring(0, startIndex + startMarker.length) +
+            '\n' + generatedCards.join('\n') + '\n                ' +
+            content.substring(endIndex);
+
         fs.writeFileSync(filePath, newContent, 'utf-8');
         console.log(`   ✅ Berhasil mengupdate ${path.basename(filePath)}`);
     } else {
@@ -1034,19 +1053,19 @@ console.log("\n🔄 5. Menyinkronkan file ke folder produksi...");
 if (fs.existsSync(prodDir)) {
     try {
         const execSync = require('child_process').execSync;
-        
+
         console.log(`   Menyinkronkan index.html, artikel.html, sitemap.xml, robots.txt ke ${prodDir}...`);
         fs.copyFileSync(indexFile, path.join(prodDir, 'index.html'));
         fs.copyFileSync(artikelFile, path.join(prodDir, 'artikel.html'));
         fs.copyFileSync(sitemapFile, path.join(prodDir, 'sitemap.xml'));
         fs.copyFileSync(robotsFile, path.join(prodDir, 'robots.txt'));
-        
+
         // Copy blog files
         const prodBlogDir = path.join(prodDir, 'blog');
         if (!fs.existsSync(prodBlogDir)) {
             fs.mkdirSync(prodBlogDir, { recursive: true });
         }
-        
+
         const generatedBlogFiles = fs.readdirSync(blogDir);
         generatedBlogFiles.forEach(file => {
             fs.copyFileSync(path.join(blogDir, file), path.join(prodBlogDir, file));
@@ -1063,7 +1082,7 @@ if (fs.existsSync(prodDir)) {
             fs.copyFileSync(path.join(assetsDir, file), path.join(prodAssetsDir, file));
         });
         console.log("   ✅ Folder assets produksi disinkronkan.");
-        
+
         console.log(`\n🎉 SEMUA PROSES BERHASIL! File produksi di ${prodDir} siap dideploy.`);
     } catch (err) {
         console.log(`   ❌ Gagal sinkronisasi otomatis: ${err.message}`);
