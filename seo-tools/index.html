@@ -1,561 +1,345 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO Command Center — Zelina Transport</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Pro Command Center — Zelina Transport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Animated background -->
+<div class="bg-aurora"></div>
 <div class="bg-grid"></div>
-<div class="bg-glow glow-1"></div>
-<div class="bg-glow glow-2"></div>
 
 <!-- Sidebar -->
 <aside class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-        <div class="logo-icon"><i class="fa-solid fa-rocket"></i></div>
-        <div>
-            <div class="logo-title">SEO Command</div>
-            <div class="logo-sub">Zelina Transport</div>
-        </div>
+  <div class="sidebar-logo">
+    <div class="logo-icon"><i class="fa-solid fa-rocket"></i></div>
+    <div>
+      <div class="logo-title">SEO Pro</div>
+      <div class="logo-sub">Zelina Transport</div>
     </div>
-
-    <nav class="sidebar-nav">
-        <a href="#" class="nav-item active" data-tab="dashboard">
-            <i class="fa-solid fa-gauge-high"></i>
-            <span>Dashboard</span>
-        </a>
-        <a href="#" class="nav-item" data-tab="generator">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span>Artikel Generator</span>
-            <span class="nav-badge">AI</span>
-        </a>
-        <a href="#" class="nav-item" data-tab="keywords">
-            <i class="fa-solid fa-bullseye"></i>
-            <span>Keyword Manager</span>
-        </a>
-        <a href="#" class="nav-item" data-tab="analyzer">
-            <i class="fa-solid fa-magnifying-glass-chart"></i>
-            <span>SEO Analyzer</span>
-        </a>
-        <a href="#" class="nav-item" data-tab="sitemap">
-            <i class="fa-solid fa-sitemap"></i>
-            <span>Sitemap Generator</span>
-        </a>
-        <a href="#" class="nav-item" data-tab="schema">
-            <i class="fa-solid fa-code"></i>
-            <span>Schema Builder</span>
-        </a>
-        <a href="#" class="nav-item" data-tab="deploy">
-            <i class="fa-brands fa-github"></i>
-            <span>Deploy Manager</span>
-        </a>
-    </nav>
-
-    <div class="sidebar-footer">
-        <div class="site-status">
-            <span class="status-dot online"></span>
-            <span>tanjungpinangrentcar.com</span>
-        </div>
-    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#" class="nav-item active" data-tab="dashboard"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+    <a href="#" class="nav-item" data-tab="generator"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Artikel AI Generator</span><span class="nav-badge">NEW</span></a>
+    <a href="#" class="nav-item" data-tab="spinner"><i class="fa-solid fa-rotate"></i><span>Content Spinner</span><span class="nav-badge">AI</span></a>
+    <a href="#" class="nav-item" data-tab="keywords"><i class="fa-solid fa-bullseye"></i><span>Keyword Manager</span></a>
+    <a href="#" class="nav-item" data-tab="indexing"><i class="fa-brands fa-google"></i><span>Google Indexing</span><span class="nav-badge hot">HOT</span></a>
+    <a href="#" class="nav-item" data-tab="analyzer"><i class="fa-solid fa-magnifying-glass-chart"></i><span>SEO Analyzer</span></a>
+    <a href="#" class="nav-item" data-tab="schema"><i class="fa-solid fa-code"></i><span>Schema Builder</span></a>
+    <a href="#" class="nav-item" data-tab="deploy"><i class="fa-brands fa-github"></i><span>Deploy Manager</span></a>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="site-status"><span class="status-dot"></span><span>tanjungpinangrentcar.com</span></div>
+  </div>
 </aside>
 
-<!-- Main Content -->
 <main class="main-content">
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      <div class="breadcrumb" id="breadcrumb">Dashboard</div>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-stat"><i class="fa-solid fa-file-lines"></i><span id="totalArticles">17</span> Artikel</div>
+      <div class="topbar-stat"><i class="fa-solid fa-fingerprint"></i><span id="uniquenessScore">100</span>% Unique</div>
+      <button class="btn-primary-sm" id="quickGenBtn"><i class="fa-solid fa-bolt"></i> Quick Generate</button>
+    </div>
+  </header>
 
-    <!-- Top Header -->
-    <header class="topbar">
-        <div class="topbar-left">
-            <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
-            <div class="breadcrumb" id="breadcrumb">Dashboard</div>
+  <!-- DASHBOARD -->
+  <section class="tab-content active" id="tab-dashboard">
+    <div class="page-header">
+      <h1 class="page-title">SEO Pro Command Center</h1>
+      <p class="page-desc">Monitor, generate & deploy konten SEO anti-plagiat — siap terindex Google halaman 1.</p>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-icon blue"><i class="fa-solid fa-newspaper"></i></div><div class="kpi-body"><div class="kpi-value" id="kpiArticles">17</div><div class="kpi-label">Total Artikel SEO</div></div><div class="kpi-trend up">+2 <i class="fa-solid fa-arrow-trend-up"></i></div></div>
+      <div class="kpi-card"><div class="kpi-icon green"><i class="fa-solid fa-fingerprint"></i></div><div class="kpi-body"><div class="kpi-value">100%</div><div class="kpi-label">Content Uniqueness</div></div><div class="kpi-trend up">✓ Anti-Plagiat</div></div>
+      <div class="kpi-card"><div class="kpi-icon orange"><i class="fa-solid fa-link"></i></div><div class="kpi-body"><div class="kpi-value" id="kpiLinks">68</div><div class="kpi-label">Internal Links</div></div><div class="kpi-trend up">+20 <i class="fa-solid fa-arrow-trend-up"></i></div></div>
+      <div class="kpi-card"><div class="kpi-icon purple"><i class="fa-solid fa-star"></i></div><div class="kpi-body"><div class="kpi-value" id="kpiScore">98</div><div class="kpi-label">Avg SEO Score</div></div><div class="kpi-trend up">Page 1 Ready</div></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header"><h2><i class="fa-solid fa-file-lines"></i> Artikel Terpublikasi</h2><button class="btn-sm" id="refreshArticles"><i class="fa-solid fa-rotate"></i> Refresh</button></div>
+        <div class="article-list" id="articleList"><div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i> Memuat...</div></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2><i class="fa-solid fa-shield-check"></i> Uniqueness Monitor</h2></div>
+        <div class="uniqueness-panel" id="uniquenessPanel">
+          <div class="unique-item"><span class="unique-label">Spinning Level</span><span class="unique-val high">TINGGI — 3 Variasi</span></div>
+          <div class="unique-item"><span class="unique-label">Sinonim Aktif</span><span class="unique-val">1,200+ kata</span></div>
+          <div class="unique-item"><span class="unique-label">Struktur Acak</span><span class="unique-val high">✓ Diaktifkan</span></div>
+          <div class="unique-item"><span class="unique-label">Plagiarism Risk</span><span class="unique-val ok">✓ AMAN (0%)</span></div>
+          <div class="unique-item"><span class="unique-label">Schema Unik</span><span class="unique-val high">✓ Per Artikel</span></div>
+          <div class="unique-item"><span class="unique-label">LSI Keywords</span><span class="unique-val">✓ Tersebar Alami</span></div>
         </div>
-        <div class="topbar-right">
-            <div class="topbar-stat">
-                <i class="fa-solid fa-file-lines"></i>
-                <span id="totalArticles">12</span> Artikel
+      </div>
+    </div>
+    <div class="card mt-16">
+      <div class="card-header"><h2><i class="fa-solid fa-list-check"></i> Google Indexing Checklist</h2><div class="score-badge" id="checklistScore">0/0</div></div>
+      <div class="checklist-grid" id="checklistGrid"></div>
+    </div>
+  </section>
+
+  <!-- GENERATOR -->
+  <section class="tab-content" id="tab-generator">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Artikel AI Generator</h1>
+      <p class="page-desc">Generate artikel SEO unik 100% anti-plagiat dengan teknik content spinning canggih & LSI keyword otomatis.</p>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header"><h2>Konfigurasi Artikel</h2></div>
+        <div class="form-body">
+          <div class="form-group"><label>Keyword Utama <span class="required">*</span></label><input type="text" id="genKeyword" class="form-input" placeholder="cth: Sewa Mobil Tanjung Pinang"></div>
+          <div class="form-group"><label>Lokasi Target</label>
+            <select id="genLocation" class="form-input">
+              <option>Tanjung Pinang</option><option>Bintan</option><option>Kepulauan Riau</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Fokus Konten</label>
+            <select id="genFocus" class="form-input">
+              <option value="umum">Umum / Informasi</option>
+              <option value="murah">Harga Murah</option>
+              <option value="lepas-kunci">Lepas Kunci</option>
+              <option value="driver">Dengan Driver</option>
+              <option value="harga">Daftar Harga</option>
+              <option value="avanza">Sewa Avanza</option>
+              <option value="innova">Sewa Innova</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Level Uniqueness</label>
+            <select id="genUnique" class="form-input">
+              <option value="3">🔥 Maximal — 3 variasi per paragraf</option>
+              <option value="2">⚡ Tinggi — 2 variasi per paragraf</option>
+              <option value="1">✓ Standar — 1 variasi</option>
+            </select>
+          </div>
+          <div class="form-group"><label>LSI Keywords Tambahan</label><input type="text" id="genLSI" class="form-input" placeholder="cth: terpercaya, murah, 2026, armada lengkap"></div>
+          <div class="form-group">
+            <label>Fitur Canggih</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" id="optFaq" checked> FAQ Section (Rich Snippet)</label>
+              <label><input type="checkbox" id="optSchema" checked> Schema Markup Lengkap</label>
+              <label><input type="checkbox" id="optInternal" checked> Internal Linking Otomatis</label>
+              <label><input type="checkbox" id="optLSI" checked> Sebar LSI Keywords</label>
+              <label><input type="checkbox" id="optDate" checked> Tanggal Update Otomatis</label>
             </div>
-            <div class="topbar-stat">
-                <i class="fa-solid fa-key"></i>
-                <span id="totalKeywords">20</span> Keywords
-            </div>
-            <button class="btn-primary-sm" id="quickGenBtn">
-                <i class="fa-solid fa-bolt"></i> Quick Generate
-            </button>
+          </div>
+          <button class="btn-primary-full" id="generateBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate Artikel Unik</button>
         </div>
-    </header>
-
-    <!-- ===================== TAB: DASHBOARD ===================== -->
-    <section class="tab-content active" id="tab-dashboard">
-        <div class="page-header">
-            <h1 class="page-title">SEO Command Center</h1>
-            <p class="page-desc">Monitor & kelola semua aset SEO sewa mobil Tanjung Pinang & Bintan dari satu dashboard.</p>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>Preview & Output</h2>
+          <div class="btn-group">
+            <button class="btn-sm" id="copyHtmlBtn" disabled><i class="fa-regular fa-copy"></i> Copy HTML</button>
+            <button class="btn-sm btn-green" id="saveArticleBtn" disabled><i class="fa-solid fa-floppy-disk"></i> Simpan ke /blog</button>
+          </div>
         </div>
-
-        <!-- KPI Cards -->
-        <div class="kpi-grid">
-            <div class="kpi-card">
-                <div class="kpi-icon blue"><i class="fa-solid fa-newspaper"></i></div>
-                <div class="kpi-body">
-                    <div class="kpi-value" id="kpiArticles">12</div>
-                    <div class="kpi-label">Total Artikel SEO</div>
-                </div>
-                <div class="kpi-trend up">+3 <i class="fa-solid fa-arrow-trend-up"></i></div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-icon green"><i class="fa-solid fa-key"></i></div>
-                <div class="kpi-body">
-                    <div class="kpi-value">20</div>
-                    <div class="kpi-label">Target Keywords</div>
-                </div>
-                <div class="kpi-trend up">+5 <i class="fa-solid fa-arrow-trend-up"></i></div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-icon orange"><i class="fa-solid fa-link"></i></div>
-                <div class="kpi-body">
-                    <div class="kpi-value" id="kpiLinks">48</div>
-                    <div class="kpi-label">Internal Links</div>
-                </div>
-                <div class="kpi-trend up">+12 <i class="fa-solid fa-arrow-trend-up"></i></div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-icon purple"><i class="fa-solid fa-star"></i></div>
-                <div class="kpi-body">
-                    <div class="kpi-value" id="kpiScore">87</div>
-                    <div class="kpi-label">Avg SEO Score</div>
-                </div>
-                <div class="kpi-trend up">+4 <i class="fa-solid fa-arrow-trend-up"></i></div>
-            </div>
+        <div id="generatorOutput" class="generator-output">
+          <div class="empty-state"><i class="fa-solid fa-wand-magic-sparkles fa-3x"></i><p>Isi form & klik<br><strong>Generate Artikel Unik</strong></p></div>
         </div>
+      </div>
+    </div>
+    <div class="card mt-16">
+      <div class="card-header"><h2><i class="fa-solid fa-layer-group"></i> Batch Generator — Semua Artikel Sekaligus</h2>
+        <button class="btn-primary-sm" id="batchGenBtn"><i class="fa-solid fa-bolt"></i> Generate Semua (17 Artikel)</button>
+      </div>
+      <div class="batch-list" id="batchList"></div>
+      <div id="batchProgress" class="batch-progress" style="display:none;">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+        <div class="progress-text" id="progressText">Memulai...</div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Two-col layout -->
-        <div class="two-col">
-
-            <!-- Article List -->
-            <div class="card">
-                <div class="card-header">
-                    <h2><i class="fa-solid fa-file-lines"></i> Artikel Blog Terpublikasi</h2>
-                    <button class="btn-sm" id="refreshArticles"><i class="fa-solid fa-rotate"></i> Refresh</button>
-                </div>
-                <div class="article-list" id="articleList">
-                    <div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i> Memuat artikel...</div>
-                </div>
-            </div>
-
-            <!-- Keyword Rankings -->
-            <div class="card">
-                <div class="card-header">
-                    <h2><i class="fa-solid fa-ranking-star"></i> Target Keyword</h2>
-                    <button class="btn-sm" onclick="switchTab('keywords')"><i class="fa-solid fa-pen"></i> Kelola</button>
-                </div>
-                <div class="keyword-list" id="keywordList">
-                    <!-- Filled by JS -->
-                </div>
-            </div>
+  <!-- CONTENT SPINNER -->
+  <section class="tab-content" id="tab-spinner">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fa-solid fa-rotate"></i> Content Spinner Pro</h1>
+      <p class="page-desc">Ubah paragraf menjadi beragam variasi unik 100% — tidak terdeteksi plagiarism checker manapun.</p>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header"><h2>Input Konten Original</h2></div>
+        <div class="form-body">
+          <div class="form-group"><label>Paragraf yang Ingin Di-Spin</label><textarea id="spinInput" class="form-input" rows="8" placeholder="Masukkan paragraf teks di sini untuk dibuat beragam variasi unik..."></textarea></div>
+          <div class="form-group"><label>Jumlah Variasi</label>
+            <select id="spinCount" class="form-input">
+              <option value="3">3 Variasi</option><option value="5">5 Variasi</option><option value="10">10 Variasi</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Metode Spinning</label>
+            <select id="spinMethod" class="form-input">
+              <option value="synonym">Sinonim Kata</option>
+              <option value="restructure">Restrukturisasi Kalimat</option>
+              <option value="both">Gabungan (Paling Unik)</option>
+            </select>
+          </div>
+          <button class="btn-primary-full" id="spinBtn"><i class="fa-solid fa-rotate"></i> Spin Konten Sekarang</button>
         </div>
-
-        <!-- SEO Checklist -->
-        <div class="card mt-16">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-list-check"></i> SEO Checklist Halaman Utama</h2>
-                <div class="score-badge" id="checklistScore">0/0</div>
-            </div>
-            <div class="checklist-grid" id="checklistGrid"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>Hasil Spin</h2><button class="btn-sm" id="copySpinBtn"><i class="fa-regular fa-copy"></i> Copy Semua</button></div>
+        <div id="spinOutput" class="generator-output">
+          <div class="empty-state"><i class="fa-solid fa-rotate fa-3x"></i><p>Masukkan teks & klik<br><strong>Spin Konten</strong></p></div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="card mt-16">
+      <div class="card-header"><h2><i class="fa-solid fa-book"></i> Kamus Sinonim SEO (Rental Mobil)</h2></div>
+      <div class="synonym-grid" id="synonymGrid"></div>
+    </div>
+  </section>
 
-    <!-- ===================== TAB: GENERATOR ===================== -->
-    <section class="tab-content" id="tab-generator">
-        <div class="page-header">
-            <h1 class="page-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Artikel Generator</h1>
-            <p class="page-desc">Generate artikel SEO teroptimasi untuk halaman 1 Google secara otomatis.</p>
-        </div>
+  <!-- KEYWORD MANAGER -->
+  <section class="tab-content" id="tab-keywords">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fa-solid fa-bullseye"></i> Keyword Manager</h1>
+      <p class="page-desc">Kelola semua target keyword untuk strategi SEO halaman 1 Google.</p>
+    </div>
+    <div class="card">
+      <div class="card-header"><h2>Tambah Keyword Baru</h2></div>
+      <div class="form-inline">
+        <input type="text" id="kwInput" class="form-input" placeholder="cth: Sewa Mobil Murah Tanjung Pinang">
+        <select id="kwLocation" class="form-input sm"><option>Tanjung Pinang</option><option>Bintan</option></select>
+        <select id="kwPriority" class="form-input sm"><option value="high">🔴 High</option><option value="medium">🟡 Medium</option><option value="low">🟢 Low</option></select>
+        <button class="btn-primary-sm" id="addKwBtn"><i class="fa-solid fa-plus"></i> Tambah</button>
+      </div>
+    </div>
+    <div class="card mt-16">
+      <div class="card-header"><h2>Daftar Target Keywords</h2>
+        <div class="search-wrap"><i class="fa-solid fa-search"></i><input type="text" id="kwSearch" class="search-input" placeholder="Cari keyword..."></div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>#</th><th>Keyword</th><th>Lokasi</th><th>Prioritas</th><th>Status</th><th>Aksi</th></tr></thead>
+          <tbody id="kwTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-        <div class="two-col">
-            <div class="card">
-                <div class="card-header"><h2>Konfigurasi Artikel</h2></div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <label>Keyword Utama <span class="required">*</span></label>
-                        <input type="text" id="genKeyword" class="form-input" placeholder="cth: Sewa Mobil Tanjung Pinang">
-                    </div>
-                    <div class="form-group">
-                        <label>Lokasi Target</label>
-                        <select id="genLocation" class="form-input">
-                            <option value="Tanjung Pinang">Tanjung Pinang</option>
-                            <option value="Bintan">Bintan</option>
-                            <option value="Kepulauan Riau">Kepulauan Riau</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Fokus Artikel</label>
-                        <select id="genFocus" class="form-input">
-                            <option value="umum">Umum / Informasi</option>
-                            <option value="murah">Harga Murah</option>
-                            <option value="lepas-kunci">Lepas Kunci</option>
-                            <option value="driver">Dengan Driver</option>
-                            <option value="harga">Daftar Harga</option>
-                            <option value="wisata">Paket Wisata</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Kategori Badge</label>
-                        <select id="genCategory" class="form-input">
-                            <option>PILIHAN UTAMA</option>
-                            <option>REKOMENDASI</option>
-                            <option>INFORMASI TERBARU</option>
-                            <option>TIPS PERJALANAN</option>
-                            <option>PROMO & LAYANAN</option>
-                            <option>DAFTAR TARIF</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Keyword Tambahan (LSI)</label>
-                        <input type="text" id="genLSI" class="form-input" placeholder="cth: murah, terpercaya, 2025">
-                    </div>
-                    <div class="form-group">
-                        <label>Tambahkan FAQ?</label>
-                        <div class="toggle-row">
-                            <label class="toggle"><input type="checkbox" id="genFaq" checked><span class="toggle-slider"></span></label>
-                            <span>Ya, sertakan FAQ Section</span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Schema Markup</label>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" checked> Article</label>
-                            <label><input type="checkbox" checked> FAQPage</label>
-                            <label><input type="checkbox" checked> LocalBusiness</label>
-                            <label><input type="checkbox" checked> BreadcrumbList</label>
-                        </div>
-                    </div>
+  <!-- GOOGLE INDEXING -->
+  <section class="tab-content" id="tab-indexing">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fa-brands fa-google"></i> Google Indexing Accelerator</h1>
+      <p class="page-desc">Panduan & tools lengkap agar artikel terindex Google dalam 24–48 jam.</p>
+    </div>
+    <div class="indexing-timeline">
+      <div class="timeline-step active"><div class="step-num">1</div><div class="step-body"><div class="step-title">Daftarkan ke Google Search Console</div><div class="step-desc">Submit sitemap.xml agar Google crawler menemukan semua halaman Anda.</div><a href="https://search.google.com/search-console" target="_blank" class="btn-primary-sm mt-8"><i class="fa-solid fa-external-link"></i> Buka Google Search Console</a></div></div>
+      <div class="timeline-step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Submit Sitemap.xml</div><div class="step-desc">Masukkan URL: <code>https://tanjungpinangrentcar.com/sitemap.xml</code> di bagian Sitemaps GSC.</div><button class="btn-sm mt-8" id="copySitemapUrl"><i class="fa-regular fa-copy"></i> Copy URL Sitemap</button></div></div>
+      <div class="timeline-step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Request Indexing Per URL (URL Inspection)</div><div class="step-desc">Untuk setiap artikel baru, gunakan fitur "URL Inspection" di GSC lalu klik "Request Indexing".</div><div class="url-list" id="indexingUrlList"></div></div></div>
+      <div class="timeline-step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Ping Search Engines</div><div class="step-desc">Kirim ping otomatis ke Google & Bing agar crawler segera mengunjungi halaman Anda.</div><button class="btn-primary-sm mt-8" id="pingEnginesBtn"><i class="fa-solid fa-satellite-dish"></i> Ping Google & Bing</button></div></div>
+      <div class="timeline-step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Share ke Media Sosial</div><div class="step-desc">Signal sosial mempercepat crawling. Share setiap artikel ke Facebook, Instagram, dan WhatsApp.</div><div class="social-share-grid" id="socialShareGrid"></div></div></div>
+    </div>
+    <div class="card mt-16">
+      <div class="card-header"><h2><i class="fa-solid fa-list-check"></i> Indexing Readiness Checklist</h2><div class="score-badge" id="indexingScore">0/8</div></div>
+      <div class="checklist-grid" id="indexingChecklist"></div>
+    </div>
+  </section>
 
-                    <button class="btn-primary-full" id="generateBtn">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Artikel Sekarang
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h2>Preview & Output</h2>
-                    <div class="btn-group">
-                        <button class="btn-sm" id="copyHtmlBtn" disabled><i class="fa-regular fa-copy"></i> Copy HTML</button>
-                        <button class="btn-sm btn-green" id="saveArticleBtn" disabled><i class="fa-solid fa-floppy-disk"></i> Simpan</button>
-                    </div>
-                </div>
-                <div id="generatorOutput" class="generator-output">
-                    <div class="empty-state">
-                        <i class="fa-solid fa-wand-magic-sparkles fa-3x"></i>
-                        <p>Isi form di kiri dan klik<br><strong>Generate Artikel</strong> untuk memulai.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Batch Generator -->
-        <div class="card mt-16">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-layer-group"></i> Batch Generator — Generate Semua Artikel Sekaligus</h2>
-                <button class="btn-primary-sm" id="batchGenBtn">
-                    <i class="fa-solid fa-bolt"></i> Generate Semua (11 Artikel)
-                </button>
-            </div>
-            <div class="batch-list" id="batchList">
-                <!-- filled by JS -->
-            </div>
-            <div id="batchProgress" class="batch-progress" style="display:none;">
-                <div class="progress-bar-wrap">
-                    <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
-                </div>
-                <div class="progress-text" id="progressText">Memulai...</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== TAB: KEYWORDS ===================== -->
-    <section class="tab-content" id="tab-keywords">
-        <div class="page-header">
-            <h1 class="page-title"><i class="fa-solid fa-bullseye"></i> Keyword Manager</h1>
-            <p class="page-desc">Kelola semua target keyword untuk strategi SEO halaman 1 Google.</p>
-        </div>
-
+  <!-- ANALYZER -->
+  <section class="tab-content" id="tab-analyzer">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Analyzer</h1>
+      <p class="page-desc">Audit on-page SEO lengkap setiap artikel dan halaman utama.</p>
+    </div>
+    <div class="card">
+      <div class="analyzer-select-row">
+        <select id="analyzerPage" class="form-input">
+          <option value="index">index.html — Halaman Utama</option>
+          <option value="artikel">artikel.html — Daftar Artikel</option>
+          <option value="blog/sewa-mobil-tanjung-pinang">blog/sewa-mobil-tanjung-pinang.html</option>
+          <option value="blog/sewa-mobil-bintan">blog/sewa-mobil-bintan.html</option>
+          <option value="blog/rental-mobil-tanjung-pinang">blog/rental-mobil-tanjung-pinang.html</option>
+          <option value="blog/sewa-mobil-murah-tanjung-pinang">blog/sewa-mobil-murah-tanjung-pinang.html</option>
+          <option value="blog/sewa-mobil-lepas-kunci-tanjung-pinang">blog/sewa-mobil-lepas-kunci-tanjung-pinang.html</option>
+          <option value="blog/sewa-mobil-bintan-murah">blog/sewa-mobil-bintan-murah.html</option>
+          <option value="blog/sewa-mobil-avanza-bintan">blog/sewa-mobil-avanza-bintan.html</option>
+        </select>
+        <input type="text" id="analyzerKeyword" class="form-input" placeholder="Keyword target analisa">
+        <button class="btn-primary-sm" id="analyzeBtn"><i class="fa-solid fa-magnifying-glass"></i> Analisa</button>
+      </div>
+    </div>
+    <div id="analyzerResult" style="display:none;">
+      <div class="two-col mt-16">
         <div class="card">
-            <div class="card-header">
-                <h2>Tambah Keyword Baru</h2>
+          <div class="card-header"><h2>SEO Score</h2></div>
+          <div class="score-display">
+            <div class="score-ring">
+              <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" stroke-width="10"/><circle cx="60" cy="60" r="54" fill="none" stroke="#0ea5e9" stroke-width="10" stroke-dasharray="339.3" stroke-dashoffset="339.3" id="scoreCircle" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg>
+              <div class="score-num" id="scoreNum">0</div>
             </div>
-            <div class="form-inline">
-                <input type="text" id="kwInput" class="form-input" placeholder="cth: sewa mobil murah tanjung pinang">
-                <select id="kwLocation" class="form-input sm">
-                    <option value="Tanjung Pinang">Tanjung Pinang</option>
-                    <option value="Bintan">Bintan</option>
-                </select>
-                <select id="kwPriority" class="form-input sm">
-                    <option value="high">🔴 High</option>
-                    <option value="medium">🟡 Medium</option>
-                    <option value="low">🟢 Low</option>
-                </select>
-                <button class="btn-primary-sm" id="addKwBtn"><i class="fa-solid fa-plus"></i> Tambah</button>
-            </div>
+            <div class="score-grade" id="scoreGrade">—</div>
+          </div>
         </div>
+        <div class="card"><div class="card-header"><h2>Ringkasan</h2></div><div id="analyzerSummary" class="analyzer-summary"></div></div>
+      </div>
+      <div class="card mt-16"><div class="card-header"><h2>Detail Audit</h2></div><div id="analyzerDetails" class="audit-list"></div></div>
+    </div>
+  </section>
 
-        <div class="card mt-16">
-            <div class="card-header">
-                <h2>Daftar Target Keywords</h2>
-                <div class="search-wrap">
-                    <i class="fa-solid fa-search"></i>
-                    <input type="text" id="kwSearch" class="search-input" placeholder="Cari keyword...">
-                </div>
+  <!-- SCHEMA -->
+  <section class="tab-content" id="tab-schema">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fa-solid fa-code"></i> Schema Builder</h1>
+      <p class="page-desc">Buat JSON-LD schema markup untuk meningkatkan rich snippet di Google.</p>
+    </div>
+    <div class="schema-tabs">
+      <button class="schema-tab active" data-schema="localbusiness">LocalBusiness</button>
+      <button class="schema-tab" data-schema="faq">FAQPage</button>
+      <button class="schema-tab" data-schema="article">Article</button>
+      <button class="schema-tab" data-schema="breadcrumb">BreadcrumbList</button>
+    </div>
+    <div class="two-col mt-16">
+      <div class="card" id="schemaForm"></div>
+      <div class="card">
+        <div class="card-header"><h2>Output JSON-LD</h2><button class="btn-sm" id="copySchemaBtn"><i class="fa-regular fa-copy"></i> Copy</button></div>
+        <div class="code-output" id="schemaOutput" style="min-height:400px;"><div class="empty-state"><i class="fa-solid fa-code fa-3x"></i><p>Isi form & schema di-generate otomatis.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPLOY -->
+  <section class="tab-content" id="tab-deploy">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fa-brands fa-github"></i> Deploy Manager</h1>
+      <p class="page-desc">Generate script deployment dan push otomatis ke GitHub.</p>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header"><h2>Konfigurasi Deploy</h2></div>
+        <div class="form-body">
+          <div class="form-group"><label>Pesan Commit</label><input type="text" id="commitMsg" class="form-input" placeholder="cth: Update artikel SEO Juli 2026"></div>
+          <div class="form-group"><label>Branch Target</label><input type="text" id="gitBranch" class="form-input" value="main"></div>
+          <div class="form-group"><label>Opsi Deploy</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" id="optGenerate" checked> Generate artikel SEO dulu</label>
+              <label><input type="checkbox" id="optSync" checked> Sinkron ke folder produksi</label>
+              <label><input type="checkbox" id="optSitemap" checked> Update sitemap.xml</label>
+              <label><input type="checkbox" id="optPush" checked> Push ke GitHub</label>
             </div>
-            <div class="table-wrap">
-                <table class="data-table" id="kwTable">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Keyword</th>
-                            <th>Lokasi</th>
-                            <th>Prioritas</th>
-                            <th>Status Artikel</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody id="kwTableBody">
-                        <!-- filled by JS -->
-                    </tbody>
-                </table>
-            </div>
+          </div>
+          <button class="btn-primary-full" id="genDeployBtn"><i class="fa-solid fa-code"></i> Generate Script .bat</button>
         </div>
-    </section>
-
-    <!-- ===================== TAB: ANALYZER ===================== -->
-    <section class="tab-content" id="tab-analyzer">
-        <div class="page-header">
-            <h1 class="page-title"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Analyzer</h1>
-            <p class="page-desc">Audit on-page SEO setiap artikel dan halaman utama website.</p>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>Deploy Script (.bat)</h2>
+          <div class="btn-group"><button class="btn-sm" id="copyDeployBtn"><i class="fa-regular fa-copy"></i> Copy</button><button class="btn-sm btn-green" id="downloadDeployBtn"><i class="fa-solid fa-download"></i> Download .bat</button></div>
         </div>
-
-        <div class="card">
-            <div class="card-header"><h2>Pilih Halaman untuk Dianalisa</h2></div>
-            <div class="analyzer-select-row">
-                <select id="analyzerPage" class="form-input">
-                    <option value="index">index.html — Halaman Utama</option>
-                    <option value="artikel">artikel.html — Daftar Artikel</option>
-                    <option value="blog/sewa-mobil-tanjung-pinang">blog/sewa-mobil-tanjung-pinang.html</option>
-                    <option value="blog/sewa-mobil-bintan">blog/sewa-mobil-bintan.html</option>
-                    <option value="blog/rental-mobil-tanjung-pinang">blog/rental-mobil-tanjung-pinang.html</option>
-                    <option value="blog/rental-mobil-bintan">blog/rental-mobil-bintan.html</option>
-                    <option value="blog/sewa-mobil-murah-tanjung-pinang">blog/sewa-mobil-murah-tanjung-pinang.html</option>
-                    <option value="blog/rental-mobil-murah-bintan">blog/rental-mobil-murah-bintan.html</option>
-                    <option value="blog/sewa-mobil-lepas-kunci-tanjung-pinang">blog/sewa-mobil-lepas-kunci-tanjung-pinang.html</option>
-                    <option value="blog/rental-mobil-bintan-lepas-kunci">blog/rental-mobil-bintan-lepas-kunci.html</option>
-                    <option value="blog/sewa-mobil-dengan-supir-tanjung-pinang">blog/sewa-mobil-dengan-supir-tanjung-pinang.html</option>
-                    <option value="blog/rental-mobil-bintan-dengan-driver">blog/rental-mobil-bintan-dengan-driver.html</option>
-                    <option value="blog/harga-sewa-mobil-tanjung-pinang">blog/harga-sewa-mobil-tanjung-pinang.html</option>
-                </select>
-                <input type="text" id="analyzerKeyword" class="form-input" placeholder="Keyword target analisa (cth: sewa mobil tanjung pinang)">
-                <button class="btn-primary-sm" id="analyzeBtn"><i class="fa-solid fa-magnifying-glass"></i> Analisa Sekarang</button>
-            </div>
-        </div>
-
-        <div id="analyzerResult" style="display:none;">
-            <div class="two-col mt-16">
-                <div class="card">
-                    <div class="card-header"><h2>SEO Score</h2></div>
-                    <div class="score-display">
-                        <div class="score-ring" id="scoreRing">
-                            <svg viewBox="0 0 120 120">
-                                <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" stroke-width="10"/>
-                                <circle cx="60" cy="60" r="54" fill="none" stroke="#0ea5e9" stroke-width="10"
-                                    stroke-dasharray="339.3" stroke-dashoffset="339.3"
-                                    id="scoreCircle" stroke-linecap="round" transform="rotate(-90 60 60)"/>
-                            </svg>
-                            <div class="score-num" id="scoreNum">0</div>
-                        </div>
-                        <div class="score-grade" id="scoreGrade">—</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header"><h2>Ringkasan Temuan</h2></div>
-                    <div id="analyzerSummary" class="analyzer-summary"></div>
-                </div>
-            </div>
-            <div class="card mt-16">
-                <div class="card-header"><h2>Detail Audit</h2></div>
-                <div id="analyzerDetails" class="audit-list"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== TAB: SITEMAP ===================== -->
-    <section class="tab-content" id="tab-sitemap">
-        <div class="page-header">
-            <h1 class="page-title"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</h1>
-            <p class="page-desc">Generate sitemap.xml otomatis untuk semua halaman website.</p>
-        </div>
-
-        <div class="two-col">
-            <div class="card">
-                <div class="card-header"><h2>Konfigurasi Sitemap</h2></div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <label>Base URL</label>
-                        <input type="text" id="sitemapBase" class="form-input" value="https://tanjungpinangrentcar.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Halaman Utama (Priority)</label>
-                        <select class="form-input" id="mainPriority">
-                            <option value="1.0">1.0 — Tertinggi</option>
-                            <option value="0.9">0.9</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Halaman Blog (Priority)</label>
-                        <select class="form-input" id="blogPriority">
-                            <option value="0.8">0.8</option>
-                            <option value="0.7">0.7</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Change Frequency</label>
-                        <select class="form-input" id="changeFreq">
-                            <option value="weekly">Weekly</option>
-                            <option value="monthly">Monthly</option>
-                            <option value="daily">Daily</option>
-                        </select>
-                    </div>
-                    <button class="btn-primary-full" id="genSitemapBtn">
-                        <i class="fa-solid fa-sitemap"></i> Generate sitemap.xml
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h2>Output sitemap.xml</h2>
-                    <button class="btn-sm" id="copySitemapBtn"><i class="fa-regular fa-copy"></i> Copy</button>
-                </div>
-                <div class="code-output" id="sitemapOutput">
-                    <div class="empty-state">
-                        <i class="fa-solid fa-sitemap fa-3x"></i>
-                        <p>Klik <strong>Generate</strong> untuk membuat sitemap.xml</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- robots.txt generator -->
-        <div class="card mt-16">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-robot"></i> robots.txt Generator</h2>
-                <button class="btn-sm" id="genRobotsBtn"><i class="fa-solid fa-gear"></i> Generate</button>
-            </div>
-            <div class="code-output" id="robotsOutput" style="min-height:120px;">
-                <div class="empty-state"><p>Klik Generate untuk membuat robots.txt</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== TAB: SCHEMA ===================== -->
-    <section class="tab-content" id="tab-schema">
-        <div class="page-header">
-            <h1 class="page-title"><i class="fa-solid fa-code"></i> Schema Builder</h1>
-            <p class="page-desc">Buat JSON-LD schema markup untuk meningkatkan rich snippet di Google.</p>
-        </div>
-
-        <div class="schema-tabs">
-            <button class="schema-tab active" data-schema="localbusiness">LocalBusiness</button>
-            <button class="schema-tab" data-schema="faq">FAQPage</button>
-            <button class="schema-tab" data-schema="article">Article</button>
-            <button class="schema-tab" data-schema="breadcrumb">BreadcrumbList</button>
-        </div>
-
-        <div class="two-col mt-16">
-            <div class="card" id="schemaForm">
-                <!-- Filled by JS -->
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h2>Output JSON-LD</h2>
-                    <button class="btn-sm" id="copySchemaBtn"><i class="fa-regular fa-copy"></i> Copy</button>
-                </div>
-                <div class="code-output" id="schemaOutput" style="min-height:400px;">
-                    <div class="empty-state">
-                        <i class="fa-solid fa-code fa-3x"></i>
-                        <p>Isi form dan schema akan<br>di-generate otomatis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== TAB: DEPLOY ===================== -->
-    <section class="tab-content" id="tab-deploy">
-        <div class="page-header">
-            <h1 class="page-title"><i class="fa-brands fa-github"></i> Deploy Manager</h1>
-            <p class="page-desc">Generate script deployment dan push otomatis ke GitHub.</p>
-        </div>
-
-        <div class="two-col">
-            <div class="card">
-                <div class="card-header"><h2>Konfigurasi Deploy</h2></div>
-                <div class="form-body">
-                    <div class="form-group">
-                        <label>Pesan Commit</label>
-                        <input type="text" id="commitMsg" class="form-input" placeholder="cth: Update artikel SEO Juli 2026">
-                    </div>
-                    <div class="form-group">
-                        <label>Branch Target</label>
-                        <input type="text" id="gitBranch" class="form-input" value="main">
-                    </div>
-                    <div class="form-group">
-                        <label>Opsi Deploy</label>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" id="optGenerate" checked> Generate artikel SEO dulu</label>
-                            <label><input type="checkbox" id="optSync" checked> Sinkron ke folder produksi</label>
-                            <label><input type="checkbox" id="optSitemap" checked> Update sitemap.xml</label>
-                            <label><input type="checkbox" id="optPush" checked> Push ke GitHub</label>
-                        </div>
-                    </div>
-                    <button class="btn-primary-full" id="genDeployBtn">
-                        <i class="fa-solid fa-code"></i> Generate Script .bat
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h2>Deploy Script (.bat)</h2>
-                    <div class="btn-group">
-                        <button class="btn-sm" id="copyDeployBtn"><i class="fa-regular fa-copy"></i> Copy</button>
-                        <button class="btn-sm btn-green" id="downloadDeployBtn"><i class="fa-solid fa-download"></i> Download .bat</button>
-                    </div>
-                </div>
-                <div class="code-output" id="deployOutput" style="min-height:420px;">
-                    <div class="empty-state">
-                        <i class="fa-brands fa-github fa-3x"></i>
-                        <p>Konfigurasi lalu klik<br><strong>Generate Script</strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Checklist pre-deploy -->
-        <div class="card mt-16">
-            <div class="card-header"><h2><i class="fa-solid fa-shield-halved"></i> Pre-Deploy Checklist</h2></div>
-            <div class="checklist-grid" id="deployChecklist"></div>
-        </div>
-    </section>
-
+        <div class="code-output" id="deployOutput" style="min-height:420px;"><div class="empty-state"><i class="fa-brands fa-github fa-3x"></i><p>Klik <strong>Generate Script</strong></p></div></div>
+      </div>
+    </div>
+    <div class="card mt-16"><div class="card-header"><h2><i class="fa-solid fa-shield-halved"></i> Pre-Deploy Checklist</h2></div><div class="checklist-grid" id="deployChecklist"></div></div>
+  </section>
 </main>
 
-<!-- Toast Notification -->
 <div class="toast" id="toast"></div>
-
 <script src="app.js"></script>
 </body>
 </html>
